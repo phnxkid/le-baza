@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppin', sans-serif;
+}
+
+body{
+    background: #A4AEB1;
+    min-height: 200vh;
+}
+
+.baniere1{
+  background-color:blue;
+  
+}
+
+/*je travaille sur l'ensemble1*/
+.ensemble1{
+  display: flex;
+  width: 100%;
+  height: 70vh;
+  background-color: white;
+  position: relative;
+  margin-top: 10vh;
+  margin-left: 10vh;
+}
+
+.categorie{
+  margin-top: 0%;
+  margin-right: 2%;
+  background-color: #CCBEC5;
+  border-radius: 5px;
+  height: 500px;
+  width: 20%;
+
+}
+
+.categorie ul li{
+  list-style: none;
+  size: 14px;
+}
+
+.categorie ul li a{
+  text-decoration: none;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+  font-weight: 500px;
+  transition: 0.6s;
+  margin: 15px;
+  font-weight: bolder;
+  margin-top: 10px;
+}
+
+.categorie ul li a:hover{
+    text-decoration: none;
+  color: #FFFFFF;
+  letter-spacing: 3px;
+  font-weight: 500px;
+  transition: 0.6s;
+  margin: 15px;
+  font-weight: bolder;
+}
+
+
+
+/*TRavail sur LES SLIDES*/
+
+.slider{
+  width: 700px;
+  height: 500px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 0vh;
+}
+
+.slides{
+  width: 500%;
+  height: 500px;
+  display: flex;
+  margin-right: 20vh;
+}
+
+.slides input{
+  display: none;
+}
+
+.slide{
+  width: 20%;
+  transition: 2s;
+}
+
+.slide img{
+  width: 700px;
+  height: 400px;
+}
+
+/*CSS POUR MANUEL*/
+
+.mavigation-manuel{
+ position: absolute;
+ width: 800px;
+ margin-top: 70vh;
+ display: flex;
+ justify-content: center;
+ margin-left: 50vh;
+
+}
+
+.manual-btn{
+ border: 2px solid #23E3C9;
+ padding: 5px;
+ border-radius: 10px;
+ cursor: pointer;
+ transition: 1s;
+ margin-top: 70vh;
+}
+
+.manual-btn:not(:last-child){
+ margin-right: 40px;
+}
+
+.manual-btn:hover{
+ background: #23E3C9;
+}
+
+#radio1:checked ~ .first{
+ margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+ margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+ margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+ margin-left: -60%;
+}
+
+/*CSS POUR NAVIGATION AUTOMATIK*/
+
+.navigation-auto{
+ position: absolute;
+ display: flex;
+ width: 800px;
+ justify-content: center;
+ margin-top: 50vh;
+}
+
+.navigation-auto div{
+ border: 2px solid #23E3C9;
+ padding: 5px;
+ border-radius: 10px;
+ transition: 1s;
+}
+
+.navigation-auto div:not(:last-child){
+ margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+ background: #23E3C9;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+ background: #23E3C9;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+ background: #23E3C9;
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+ background: #23E3C9;
+}
+
+/*FIN DU TRAVAIL SUR LES SLIDES*/
+
+
+
+
+
+
+
+
+
+header{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.6s;
+    padding: 40px 100px;
+   /* z-index: 100000;*/
+}
+
+header.sticky{
+    padding: 5px 100px;
+    background: #fff;
+}
+
+header #logo a{
+    position: relative;
+    font-weight: 700;
+    color: rgb(12, 11, 11);
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.6s;
+}
+
+header ul{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+ 
+ul li form{
+    display: flex;
+    
+}
+
+header ul li{
+    position: relative;
+    list-style: none;
+}
+
+header ul li a{
+    position: relative;
+    margin: 0 15px;
+    text-decoration: none;
+    color: rgb(17, 15, 15);
+    letter-spacing: 2px;
+    font-weight: 500px;
+    transition: 0.6s;
+    text-transform: uppercase;
+  /*  border: 1px solid transparent;
+    border-radius: 3px; */
+}
+
+#menu{
+    position: relative;
+    margin-top: -6vh;
+}
+/*
+li form .search-bar{
+    width: 40vh;
+    height: 5vh;
+    border-radius: 7px;
+}
+
+li form .bouton{
+    height: 5vh;
+    background-color: chocolate;
+    border-radius: 7px;
+} */
+
+header ul li a:hover, a.active{
+    border-bottom: solid #000;
+    transition: 0.6s;
+}
+/*
+.banner{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background: url('../pictures/background4.jpg');
+    background-size: cover;
+}
+*/
+
+header.sticky ul li a{
+    color: #000;
+}
+
+header.sticky #logo a{
+    color: #000;
+} 
+
+.baniere2{
+    background: #EF6508;
+    width: 100%;
+    height: 8vh;
+    color: white;
+}
+
+header .icon{
+    color: #fff;
+    font-size: 30px;
+    line-height: 80px;
+    float: right;
+    cursor: pointer;
+    display: none;
+}
+
+
+
+
+
+
+
+
+/* ==========================================
+    FOR DEMO PURPOSE
+  ========================================== */
+body {
+  background: #2a2e32;
+}
+
+.text-small{
+  font-size: 0.9rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+.form-control {
+  background: #212529;
+  border-color: #545454;
+}
+
+.form-control:focus {
+  background: #212529;
+}
+
+footer {
+  background: #212529;
+}
+
+
+  body, html {
+    height: 100%;
+  }
+
+.btn{
+    display:none;
+}
+
+.card:hover .btn{
+    display: block;
+  }
+
+
+
+
+} 
+
+
+/*ADAPTATION DE L'ECRAN*/
+
+@media screen (max-width: 993px) {
+    .card-body{
+        height: 50px;
+    }
+}

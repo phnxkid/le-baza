@@ -1,0 +1,314 @@
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci exercitationem quidem accusamus ipsam atque facere, odit nesciunt tempore obcaecati rerum aspernatur nemo cupiditate ab dignissimos ducimus quisquam recusandae molestias. Doloribus.
+
+
+
+
+<!--<p class="card-text"><?= //substr($produit->description, 0, 200); ?></p>-->
+
+
+
+
+<?php foreach($Produits as $produit): ?> 
+        <div class="col">
+          <div class="card shadow-sm h-100 w-50">
+            
+            <img class="card-img-top h-70 w-100" src="<?= $produit->image ?>">
+            <h6 class="card-title"><b style="margin-left: 10%;"><?= $produit->nom ?></b></h6>
+            <div class="card-body">
+              
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Ajouter au panier</button>
+                </div>
+                <small class="text-muted"><?= $produit->prix ?> €</small>
+              </div>
+            </div>
+          </div>
+        </div>
+  <?php endforeach; ?>
+
+
+
+
+  /*    private $host = 'localhost';
+    private $username = 'root';
+    private $password = '';
+    private $database = 'lebazardata';
+    public $db;
+
+    public function __construct($host = null, $username = null, $password = null, $database = null){
+        global $db;
+        if ($host != null) {
+            $this->host = $host;
+            $this->username = $username; 
+            $this->password = $password; 
+            $this->database = $database; 
+        }
+
+        try{
+            $this->db = new PDO("'mysql:host='.$this->host.';dbname='.$this->database;charset=utf8", $this->username, $this->password);
+            $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+        }catch (Exception $e){
+            $e->getMessage();
+            }
+    }
+
+    public function getDb() {
+        global $db;
+       if ($db instanceof PDO) {
+            return $this->db;
+       }
+ }
+
+    public function query($sql){
+            global $db;
+            $req =$db->prepare($sql);
+            $req->execute();
+            return $req->fetchAll(PDO::FETCH_OBJ);
+    }
+}
+*/
+ 
+
+ array(
+                //PDO::MSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8',
+                //PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
+            )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nasco 40 pouces 33
+fiverr.com
+5euro.com
+
+
+
+
+
+
+
+
+
+
+
+  <div class="row">
+    <?php foreach($Produits as $produit): ?>
+        <div class="col-xs-4">  
+            <div class="col">
+                <div class="card shadow-sm h-100 w-50">
+                    <img class="card-img-top h-70 w-100" src="<?= $produit->image ?>">
+                    <h6 class="card-title"><b style="margin-left: 10%;"><?= $produit->nom ?></b></h6>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Ajouter au panier</button>
+                            </div>
+                            <small class="text-muted"><?= $produit->prix ?> €</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+
+
+     //$insertInfo = $access -> prepare("INSERT INTO  produits(stock, nom, categorie, prix, description, image, date) VALUES(?,?,?,?,?,?,?)");
+     //$insertInfo -> execute(array($stock, $nom, $cat, $prix, $description, $file_name, $date));
+
+
+
+function ajouterInform($stock, $nom, $prix, $description, $image1, $image2, $image3, $image4)
+{
+   if(require("connexion.php"))
+   {
+     $req = $access->prepare("INSERT INTO t_informatik (quantite, nom, prix, description, image1, image2, image3, image4) VALUES ('$stock', '$nom', '$prix', '$description', '$image1', '$image2', '$image3', '$image4')");
+
+     $req->execute(array($stock, $nom, $prix, $description, $image1, $image2, $image3, $image4));
+
+     $req->closeCursor();
+   }
+}
+
+function ajouterBebe($stock, $nom, $prix, $description, $image1, $image2, $image3, $image4)
+{
+   if(require("connexion.php"))
+   {
+     $req = $access->prepare("INSERT INTO t_bebe (quantite, nom, prix, description, image1, image2, image3, image4) VALUES ('$stock', '$nom', '$prix', '$description', '$image1', '$image2', '$image3', '$image4')");
+
+     $req->execute(array($stock, $nom, $prix, $description, $image1, $image2, $image3, $image4));
+
+     $req->closeCursor();
+   }
+}
+
+function ajouterElectro($stock, $nom, $prix, $description, $image1, $image2, $image3, $image4)
+{
+   if(require("connexion.php"))
+   {
+     $req = $access->prepare("INSERT INTO t_electronic (quantite, nom, prix, description, image1, image2, image3, image4) VALUES ('$stock', '$nom', '$prix', '$description', '$image1', '$image2', '$image3', '$image4')");
+
+     $req->execute(array($stock, $nom, $prix, $description, $image1, $image2, $image3, $image4));
+
+     $req->closeCursor();
+   }
+}
+
+function ajouterTel($stock, $nom, $prix, $description, $image1, $image2, $image3, $image4)
+{
+   if(require("connexion.php"))
+   {
+     $req = $access->prepare("INSERT INTO t_telephone (quantite, nom, prix, description, image1, image2, image3, image4) VALUES ('$stock', '$nom', '$prix', '$description', '$image1', '$image2', '$image3', '$image4')");
+
+     $req->execute(array($stock, $nom, $prix, $description, $image1, $image2, $image3, $image4));
+
+     $req->closeCursor();
+   }
+}
+
+function ajouterAgri($stock, $nom, $prix, $description, $image1, $image2, $image3, $image4)
+{
+   if(require("connexion.php"))
+   {
+     $req = $access->prepare("INSERT INTO t_agriculture (quantite, nom, prix, description, image1, image2, image3, image4) VALUES ('$stock', '$nom', '$prix', '$description', '$image1', '$image2', '$image3', '$image4')");
+
+     $req->execute(array($stock, $nom, $prix, $description, $image1, $image2, $image3, $image4));
+
+     $req->closeCursor();
+   }
+}
+
+function ajouterMaison($stock, $nom, $prix, $description, $image1, $image2, $image3, $image4)
+{
+   if(require("connexion.php"))
+   {
+     $req = $access->prepare("INSERT INTO t_maison (quantite, nom, prix, description, image1, image2, image3, image4) VALUES ('$stock', '$nom', '$prix', '$description', '$image1', '$image2', '$image3', '$image4')");
+
+     $req->execute(array($stock, $nom, $prix, $description, $image1, $image2, $image3, $image4));
+
+     $req->closeCursor();
+   }
+}
+
+function ajouterModeF($stock, $nom, $prix, $description, $image1, $image2, $image3, $image4)
+{
+   if(require("connexion.php"))
+   {
+     $req = $access->prepare("INSERT INTO t_modef (quantite, nom, prix, description, image1, image2, image3, image4) VALUES ('$stock', '$nom', '$prix', '$description', '$image1', '$image2', '$image3', '$image4')");
+
+     $req->execute(array($stock, $nom, $prix, $description, $image1, $image2, $image3, $image4));
+
+     $req->closeCursor();
+   }
+}
+
+function ajouterModeH($stock, $nom, $prix, $description, $image1, $image2, $image3, $image4)
+{
+   if(require("connexion.php"))
+   {
+     $req = $access->prepare("INSERT INTO t_modeh (quantite, nom, prix, description, image1, image2, image3, image4) VALUES ('$stock', '$nom', '$prix', '$description', '$image1', '$image2', '$image3', '$image4')");
+
+     $req->execute(array($stock, $nom, $prix, $description, $image1, $image2, $image3, $image4));
+
+     $req->closeCursor();
+   }
+}
+
+function ajouterBeaute($stock, $nom, $prix, $description, $image1, $image2, $image3, $image4)
+{
+   if(require("connexion.php"))
+   {
+     $req = $access->prepare("INSERT INTO t_beaute (quantite, nom, prix, description, image1, image2, image3, image4) VALUES ('$stock', '$nom', '$prix', '$description', '$image1', '$image2', '$image3', '$image4')");
+
+     $req->execute(array($stock, $nom, $prix, $description, $image1, $image2, $image3, $image4));
+
+     $req->closeCursor();
+   }
+}
+
+function ajouterAutre($stock, $nom, $prix, $description, $image1, $image2, $image3, $image4)
+{
+   if(require("connexion.php"))
+   {
+     $req = $access->prepare("INSERT INTO t_autres (quantite, nom, prix, description, image1, image2, image3, image4) VALUES ('$stock', '$nom', '$prix', '$description', '$image1', '$image2', '$image3', '$image4')");
+
+     $req->execute(array($stock, $nom, $prix, $description, $image1, $image2, $image3, $image4));
+
+     $req->closeCursor();
+   }
+}
+
+
+#public	
+	/*function afficher()
+	{
+		$req = Bd::prepare("SELECT * FROM produits ORDER BY id DESC");
+
+		$req->execute();
+
+		$data = $req->fetchAll(PDO::FETCH_OBJ);
+
+		return $data;
+
+		$req->closeCursor();
+	}
+
+
+	#public
+	function afficherMV()
+	{
+		$req = Bd::prepare("SELECT * FROM produits WHERE date='2022-07-14' ORDER BY id DESC ");
+
+		$req->execute();
+
+		$data = $req->fetchAll(PDO::FETCH_OBJ);
+
+		return $data;
+
+		$req->closeCursor();
+	}
+
+	// public	function afficherPanier()
+	// {
+	// 	if(isset($_GET['id'])){
+	// 		$idProduit = $_GET['id'];
+	// 	}
+
+	// 		$ids = new Panier($_GET['id']);
+	// 		$ids = array_keys($_SESSION['panier']);
+	// 		if (empty($ids)) {
+	// 			// code...
+	// 		}
+	// 		unset($_SESSION['panier'][2]);
+	// 		$req = $access->prepare("SELECT * FROM produits WHERE id IN ('.implode(',', $ids).')");
+	// 		$data = $req->fetch();
+	// 		return $data;
+	// 		$req->closeCursor();
+	// 	// code...
+	// }
+
+	#public	
+	
+	#public	
+	function ajouterPanier($id)
+	{
+		$panier = new Panier();
+		$panier->add($id);
+	}
+#}
